@@ -32,7 +32,7 @@ def machineLearning(argv):
     # predict the image
     prediction = model.predict(img)
     # Dictionary of classes
-    CLASSES = {0: "Apple", 1: "Banana", 2: "Book", 3: "Cup", 4: "Ladder"}
+    CLASSES = NeuralNetwork.CLASSES
     # return the value of the highest probability class
     print(np.argmax(prediction))
     return CLASSES[np.argmax(prediction)]
