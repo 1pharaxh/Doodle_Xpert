@@ -17,7 +17,10 @@ import NeuralNetwork
 
 def machineLearning(argv):
     # load the model
-    model = tf.keras.models.load_model('models/fruits_MLP.h5')
+    if argv == 0:
+        model = tf.keras.models.load_model('models/CNN.h5')
+    else:
+        model = tf.keras.models.load_model('models/MLP.h5')
     # read the image
     img = cv.imread("files/img.png", 0)
     # convert it into a numpy array
@@ -29,9 +32,10 @@ def machineLearning(argv):
     # predict the image
     prediction = model.predict(img)
     # Dictionary of classes
-    FRUITS = {0: "Apple", 1: "Banana", 2: "Grape", 3: "Pineapple"}
+    CLASSES = {0: "Apple", 1: "Banana", 2: "Book", 3: "Cup", 4: "Ladder"}
     # return the value of the highest probability class
-    return FRUITS[np.argmax(prediction)]
+    print(np.argmax(prediction))
+    return CLASSES[np.argmax(prediction)]
 
     # for debugging uncomment the following lines
     # and paste before return.
@@ -147,6 +151,7 @@ def mainmenu():
                         NeuralNetwork.execute(0)
                         # Call game loop with argv of CNN
                         game(0)
+        pygame.init()
         # Font for drawing the title
         font2 = pygame.font.Font('files\Early GameBoy.ttf', 48)
         screen.blit(font2.render("Doodle X-Perts", True, (0, 0, 0)), (80, 0))
@@ -220,7 +225,7 @@ def game(argv):
                     if argv == 1:
                         prediction = machineLearning(1)
                     if argv == 0:
-                        prediction = machineLearning(argv=0)
+                        prediction = machineLearning(0)
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     if button_3.collidepoint((mx, my)):
