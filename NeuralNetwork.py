@@ -5,18 +5,18 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 import os
-# Number of classes ( 13 detectable objects)
+# Number of classes ( 5 detectable objects). Change this in case of different number of classes.
 NumClasses = 5
-# Dictionary of Classes and their labels
+# Dictionary of Classes and their labels. Extend or shrink depending on the number of classes.
 CLASSES = {0: "Apple", 1: "Banana", 2: "Book", 3: "Cup", 4: "Ladder"}
 
-# number of samples to take in each class
+# number of samples to take in each class. Extend or reduce depending on your system.
 N = 10000
 
-# Number of times to repeat each fruit
+# Number of times to repeat each fruit. Change this depending on your system.
 NumEPOCHS = 40
 
-# List of files to load (in order of the dictionary)
+# List of files to load (in order of the dictionary). Extend or shrink depending on the number of classes.
 files = ["apple", "banana", "book", "cup", "ladder"]
 
 """
@@ -54,7 +54,7 @@ def CNN():
     # reshaped to 28x28 format for the convolutional layers.
     classes = []
     for file in files:
-        f = np.load("data/full_numpy_bitmap_" + file + ".npy")
+        f = np.load("data/" + file + ".npy")
         new_file = []
         for i in range(len(f)):
             x = np.reshape(f[i], (28, 28))
@@ -140,7 +140,7 @@ def MLP():
     # so we don't need to reshape it.
     classes = []
     for file in files:
-        f = np.load("data/full_numpy_bitmap_" + file + ".npy")
+        f = np.load("data/" + file + ".npy")
         classes.append(f)
     # limit no of samples in each class to N
     classes = set_limit(classes, N)
