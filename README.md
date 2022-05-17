@@ -26,7 +26,7 @@ files = ["apple", "banana", "book", "cup", "ladder"]
 
 ## Setting up:
 
-Please install the pip packages mentioned in `requirements.txt` by running `pip install -r requirements.txt` in your terminal. After this you can proceed downloading the training and testing datasets in the data folder. `npy_links.txt` holds the direct download links to all currently supported doodle datasets (You can download as many or as few as you like but don't forget to modify the source code if you do so). I have also included both trained Models (CNN and MLP) with an accuracy of about 80% So you won't have the spend time training.
+Please install the pip packages mentioned in `requirements.txt` by running `pip install -r requirements.txt` in your terminal. After this you can proceed downloading the training and testing datasets in the data folder. `npy_links.txt` holds the direct download links to all currently supported doodle datasets (You can download as many or as few as you like but don't forget to modify the source code if you do so). I have also included both trained Models (CNN and MLP) with an accuracy of about 90% So you won't have the spend time training.
 
 ## Program in Action:
 
