@@ -1,0 +1,5 @@
+https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/apple.npy
+https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/banana.npy
+https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/book.npy
+https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/cup.npy
+https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/ladder.npy
